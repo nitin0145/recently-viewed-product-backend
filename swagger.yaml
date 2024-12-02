@@ -1,0 +1,21 @@
+openapi: 3.0.0
+info:
+  title: User Profile API
+  description: API for managing recently viewed products
+  version: 1.0.0
+paths:
+  /api/v1/users/{userId}/recentlyViewed:
+    get:
+      summary: Get recently viewed products for a user
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          description: The user's ID
+          schema:
+            type: string
+      responses:
+        200:
+          description: A list of products
+        500:
+          description: Error occurred
